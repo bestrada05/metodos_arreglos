@@ -61,14 +61,14 @@ const renderizarTareas = function () {
     <td >${
       tarea.confirmado
         ? "<span style='color:green'>" + tarea.id + "</span>"
-        : "<span style='color:red'>" + tarea.id + "</span>"
+        : "<span style='color:red'> <del>" + tarea.id + "</del></span>"
     } </td>
 
     <td >
         ${
           tarea.confirmado
             ? "<span style='color:green'>" + tarea.nombre + "</span>"
-            : "<span style='color:red'>" + tarea.nombre + "</span>"
+            : "<span style='color:red'> <del>" + tarea.nombre + "</del></span>"
         } </td>
     <td><input onclick="actualizarConfirmacion(${
       tarea.id
@@ -101,10 +101,10 @@ const actualizarConfirmacion = function (id) {
   renderizarTareas();
 };
 
-recuento = () => {
+const recuento = () => {
   total.innerHTML = tareas.length;
   realizadas.innerHTML = tareas.filter((e) => e.confirmado === true).length;
   noRealizadas.innerHTML = tareas.filter((e) => e.confirmado === false).length;
 };
 
-const checkTareas = renderizarTareas();
+renderizarTareas();
