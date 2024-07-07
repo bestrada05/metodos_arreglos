@@ -67,7 +67,7 @@ const renderizarTareas = function () {
     <td >
         ${
           tarea.confirmado
-            ? "<span style='color:green'><del>" + tarea.nombre + "</del></span>"
+            ? "<span style='color:green'>" + tarea.nombre + "</span>"
             : "<span style='color:red'>" + tarea.nombre + "</span>"
         } </td>
     <td><input onclick="actualizarConfirmacion(${
